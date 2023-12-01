@@ -19,6 +19,7 @@ export default function Player({ initialName, symbol }) {
       <input
         required
         type="text"
+        value={playerName}
         onChange={handleChange}
       />
     );
