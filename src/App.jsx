@@ -47,7 +47,7 @@ function App() {
           onSelectSquare={handleSelectSquare}
         />
       </div>
-      <Log />
+      <Log turns={gameTurns} />
     </main>
   );
 }
