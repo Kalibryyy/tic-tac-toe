@@ -8,9 +8,9 @@ export default function GameBoard({ onSelectSquare, turns }) {
   const gameBoard = structuredClone(initialGameBoard);
 
   for (const turn of turns) {
-    const {square, player} = turn;
-    const {row, col} = square;
-  
+    const { square, player } = turn;
+    const { row, col } = square;
+
     gameBoard[row][col] = player;
   }
 
@@ -22,6 +22,7 @@ export default function GameBoard({ onSelectSquare, turns }) {
             {row.map((playerSymbol, playerSymbolIndex) => (
               <li key={playerSymbolIndex}>
                 <button
+                  disabled={playerSymbol !== null}
                   onClick={() => onSelectSquare(rowIndex, playerSymbolIndex)}
                 >
                   {playerSymbol}
